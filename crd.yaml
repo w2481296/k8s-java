@@ -29,15 +29,11 @@ spec:
               description: ChaosBladeSpec defines the desired state of ChaosBlade
               properties:
                 experiments:
-                  description: 'INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-                        Important: Run "operator-sdk generate k8s" to regenerate code after
-                        modifying this file Add custom validation using kubebuilder tags:
-                        https://book-v1.book.kubebuilder.io/beyond_basics/generating_crd.html'
+                  description: 'INSERT ADDITIONAL SPEC FIELDS - desired state of cluster'
                   items:
                     properties:
                       action:
-                        description: Action is the experiment scenario of the target,
-                          such as delay, load
+                        description: Action is the experiment scenario of the target
                         type: string
                       desc:
                         description: Desc is the experiment description
@@ -50,8 +46,7 @@ spec:
                               description: Name is the name of flag
                               type: string
                             value:
-                              description: 'TODO: Temporarily defined as an array for
-                                    all flags Value is the value of flag'
+                              description: 'Temporarily defined as an array for all flags Value is the value of flag'
                               items:
                                 type: string
                               type: array
@@ -61,8 +56,7 @@ spec:
                           type: object
                         type: array
                       scope:
-                        description: Scope is the area of the experiments, currently support
-                          node, pod and container
+                        description: Scope is the area of the experiments, currently support node, pod and container
                         type: string
                       target:
                         description: Target is the experiment target, such as cpu, network
@@ -80,9 +74,7 @@ spec:
               description: ChaosBladeStatus defines the observed state of ChaosBlade
               properties:
                 expStatuses:
-                  description: 'Important: Run "operator-sdk generate k8s" to regenerate
-                        code after modifying this file Add custom validation using kubebuilder
-                        tags: https://book-v1.book.kubebuilder.io/beyond_basics/generating_crd.html'
+                  description: 'Important: Run "operator-sdk generate k8s" to regenerate code after modifying this file Add custom validation using kubebuilder'
                   items:
                     properties:
                       action:
@@ -100,8 +92,7 @@ spec:
                               description: experiment uid in chaosblade
                               type: string
                             identifier:
-                              description: 'Resource identifier, rules as following: container:
-                                    Namespace/NodeName/PodName/ContainerName pod： Namespace/NodeName/PodName'
+                              description: 'Resource identifier, rules as following: container: Namespace/NodeName/PodName/ContainerName pod： Namespace/NodeName/PodName'
                               type: string
                             kind:
                               description: Kind
@@ -138,8 +129,7 @@ spec:
                     type: object
                   type: array
                 phase:
-                  description: Phase indicates the state of the experiment   Initial ->
-                    Running -> Updating -> Destroying -> Destroyed
+                  description: Phase indicates the state of the experiment   Initial -> Running -> Updating -> Destroying -> Destroyed
                   type: string
               required:
                 - expStatuses
