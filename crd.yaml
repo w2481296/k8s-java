@@ -18,18 +18,18 @@ spec:
           description: ChaosBlade is the Schema for the chaosblades API
           properties:
             apiVersion:
-              description: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest'
+              description: APIVersion defines the versioned schema of this representation of an object
               type: string
             kind:
-              description: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client'
+              description: Kind is a string value representing the REST resource this object represents
               type: string
             metadata:
               type: object
-            spec:
+            spec: 
               description: ChaosBladeSpec defines the desired state of ChaosBlade
               properties:
                 experiments:
-                  description: 'INSERT ADDITIONAL SPEC FIELDS - desired state of cluster'
+                  description: INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
                   items:
                     properties:
                       action:
@@ -46,7 +46,7 @@ spec:
                               description: Name is the name of flag
                               type: string
                             value:
-                              description: 'Temporarily defined as an array for all flags Value is the value of flag'
+                              description: Temporarily defined as an array for all flags Value is the value of flag
                               items:
                                 type: string
                               type: array
@@ -56,10 +56,10 @@ spec:
                           type: object
                         type: array
                       scope:
-                        description: Scope is the area of the experiments, currently support node, pod and container
+                        description: Scope is the area of the experiments currently support node pod and container
                         type: string
                       target:
-                        description: Target is the experiment target, such as cpu, network
+                        description: Target is the experiment target such as cpu network
                         type: string
                     required:
                       - action
@@ -74,7 +74,7 @@ spec:
               description: ChaosBladeStatus defines the observed state of ChaosBlade
               properties:
                 expStatuses:
-                  description: 'Important: Run "operator-sdk generate k8s" to regenerate code after modifying this file Add custom validation using kubebuilder'
+                  description: regenerate code after modifying this file Add custom validation using kubebuilder
                   items:
                     properties:
                       action:
@@ -92,7 +92,7 @@ spec:
                               description: experiment uid in chaosblade
                               type: string
                             identifier:
-                              description: 'Resource identifier, rules as following: container: Namespace/NodeName/PodName/ContainerName pod： Namespace/NodeName/PodName'
+                              description: Resource identifier rules as following
                               type: string
                             kind:
                               description: Kind
@@ -129,7 +129,7 @@ spec:
                     type: object
                   type: array
                 phase:
-                  description: Phase indicates the state of the experiment   Initial -> Running -> Updating -> Destroying -> Destroyed
+                  description: Phase indicates the state of the experiment   Initial  Running  Updating  Destroying  Destroyed
                   type: string
               required:
                 - expStatuses
